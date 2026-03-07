@@ -1,0 +1,76 @@
+/* ─── MÉDIAS ─── */
+/* ── Audio row ── */
+.audio-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 16px;
+  border: 1.5px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  transition: box-shadow .2s;
+}
+.audio-row:hover { box-shadow: 0 4px 18px rgba(154,27,30,.09); }
+.audio-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--wci-red);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 18px; flex-shrink: 0;
+}
+.audio-info { flex: 1; }
+.audio-info strong { display: block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:13.5px; color:var(--wci-text); }
+.audio-info span { font-size:12px; color:#999; }
+.audio-btns { display: flex; gap: 8px; }
+.audio-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--wci-red); color: #fff;
+  border: none; cursor: pointer; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, transform .15s;
+}
+.audio-btn:hover { background: var(--wci-light); transform: scale(1.08); }
+
+/* ── YouTube embed ── */
+.yt-wrap {
+  border-radius: 10px; overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,.1);
+  background: #000;
+}
+.yt-wrap iframe { display:block; width:100%; aspect-ratio:16/9; border:none; }
+
+/* ── Verset du Jour ── */
+.verset-box {
+  background: var(--wci-red);
+  border-radius: 14px;
+  padding: 40px 28px;
+  text-align: center;
+  color: #fff;
+  position: sticky; top: 90px;
+}
+.verset-box h4 {
+  font-family:'Montserrat',sans-serif; font-weight:900;
+  text-transform:uppercase; letter-spacing:.1em;
+  font-size:13px; color:rgba(255,255,255,.7);
+  margin-bottom: 20px;
+}
+.verset-box blockquote {
+  font-family:'Montserrat',sans-serif;
+  font-weight:800; font-size:1.15rem;
+  line-height:1.65; color:#fff;
+  border:none; padding:0; margin:0 0 16px;
+  text-transform: uppercase;
+}
+.verset-box cite {
+  font-size:13px; color:rgba(255,255,255,.7);
+  font-style:normal; font-weight:600;
+}
+
+/* section labels */
+.media-section-label {
+  font-family:'Montserrat',sans-serif;
+  font-weight:900; font-size:1.1rem;
+  text-transform:uppercase; letter-spacing:.08em;
+  color: var(--wci-red);
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Winners' Chapel International – Akouedo Goshen</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --wci-red:    #9A1B1E;
+      --wci-dark:   #7a1518;
+      --wci-light:  #c02428;
+      --wci-gold:   #c9a84c;
+      --wci-gray:   #F5F5F5;
+      --wci-text:   #1a1a1a;
+    }
+
+    /* ─── Base ─── */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--wci-text);
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
+    .text-red   { color: var(--wci-red) !important; }
+    .bg-red     { background-color: var(--wci-red) !important; }
+    .bg-gray    { background-color: var(--wci-gray) !important; }
+    .btn-red    { background: var(--wci-red); color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: background .2s, transform .15s; }
+    .btn-red:hover { background: var(--wci-light); color: #fff; transform: translateY(-2px); }
+    .btn-outline-red { border: 2px solid var(--wci-red); color: var(--wci-red); font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; transition: all .2s; }
+    .btn-outline-red:hover { background: var(--wci-red); color: #fff; }
+    .divider-red { width: 56px; height: 3px; background: var(--wci-red); border-radius: 2px; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
+    .fade-up { opacity:0; transform:translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+
+    /* ─── PAGE SYSTEM ─── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--wci-dark);
+      font-size: 12px;
+      color: rgba(255,255,255,.8);
+      padding: 5px 0;
+    }
+    .topbar a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: #fff; }
+
+    /* ─── NAVBAR ─── */
+    .navbar { background: var(--wci-red) !important; padding: 0 0; min-height: 68px; }
+    .navbar-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .navbar-logo {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      border: 2px solid rgba(255,255,255,.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .navbar-brand-text strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .04em; line-height: 1.3; }
+    .navbar-brand-text small  { font-size: 10px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .04em; }
+    .navbar-toggler { border: 2px solid rgba(255,255,255,.4); }
+    .navbar-toggler-icon { filter: invert(1); }
+    .nav-link-custom {
+      color: rgba(255,255,255,.9) !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600; font-size: 13px;
+      text-transform: uppercase; letter-spacing: .04em;
+      padding: 24px 12px !important;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      cursor: pointer;
+    }
+    .nav-link-custom:hover,
+    .nav-link-custom.active-nav {
+      color: #fff !important;
+      border-bottom-color: rgba(255,255,255,.6);
+    }
+    .nav-link-custom.btn-nav-donate {
+      background: rgba(255,255,255,.15);
+      border-radius: 6px;
+      border-bottom: none;
+      margin: 14px 6px;
+      padding: 8px 14px !important;
+    }
+    .nav-link-custom.btn-nav-donate:hover { background: rgba(255,255,255,.28); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to right, rgba(100,12,15,.82) 45%, rgba(100,12,15,.48) 100%),
+        url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1800&q=80') center/cover no-repeat;
+      display: flex; align-items: center;
+      padding-top: 68px;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 5.5vw, 4rem);
+      font-weight: 900; color: #fff;
+      text-transform: uppercase; line-height: 1.12;
+      text-shadow: 0 2px 20px rgba(0,0,0,.35);
+    }
+    .hero-subtitle { font-size: clamp(.95rem, 2vw, 1.25rem); color: rgba(255,255,255,.88); font-weight: 300; }
+    .hero-scroll { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.5); font-size: 24px; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ─── WELCOME ─── */
+    .welcome-photo-wrap { position: relative; }
+    .welcome-photo-wrap::before {
+      content: '';
+      position: absolute; top: -14px; left: -14px; right: 14px; bottom: 14px;
+      border: 3px solid var(--wci-gold); border-radius: 14px; z-index: 0;
+    }
+    .welcome-photo-wrap img,
+    .welcome-photo-placeholder {
+      position: relative; z-index: 1;
+      width: 100%; border-radius: 14px; display: block;
+    }
+    .welcome-photo-placeholder {
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg,#f0e8e0,#e8ddd4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 80px;
+    }
+
+    /* ─── SCHEDULE STRIP ─── */
+    .schedule-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      transition: transform .2s, box-shadow .2s;
+      height: 100%;
+    }
+    .schedule-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,.12); }
+    .schedule-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--wci-red); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; }
+
+    /* ─── MINISTRY CARDS ─── */
+    .ministry-card {
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      transition: transform .2s, box-shadow .2s;
+      height: 100%;
+    }
+    .ministry-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,.13); }
+    .ministry-card-img {
+      height: 190px;
+      background: linear-gradient(135deg, var(--wci-red), var(--wci-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 56px; color: rgba(255,255,255,.8);
+    }
+    .ministry-card-body { padding: 20px; background: #fff; }
+    .ministry-card-body h5 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--wci-red); margin-bottom: 8px; }
+
+    /* ─── LEADERSHIP ─── */
+    .pastor-card {
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      background: #fff;
+      transition: transform .2s;
+    }
+    .pastor-card:hover { transform: translateY(-4px); }
+    .pastor-photo {
+      height: 220px; background: linear-gradient(135deg,#e8ddd4,#d4c8bc);
+      display: flex; align-items: center; justify-content: center; font-size: 70px;
+    }
+    .pastor-card-body { padding: 20px; }
+    .pastor-card-body h5 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--wci-red); margin-bottom: 4px; }
+    .pastor-card-body .title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #999; }
+
+    /* ─── MEDIA / VIDEOS ─── */
+    .video-card {
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      background: #fff;
+      transition: transform .2s;
+    }
+    .video-card:hover { transform: translateY(-4px); }
+    .video-thumb {
+      height: 190px;
+      background: linear-gradient(135deg,#1a1a1a,#333);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; position: relative;
+    }
+    .video-thumb .play-btn {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(154,27,30,.9);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 26px;
+      transition: transform .2s, background .2s;
+    }
+    .video-thumb:hover .play-btn { transform: scale(1.1); background: var(--wci-red); }
+    .verse-banner {
+      background: var(--wci-red);
+      padding: 56px 40px;
+      text-align: center;
+    }
+    .verse-banner blockquote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.6;
+      border: none; padding: 0; margin: 0;
+    }
+    .verse-banner cite { display: block; margin-top: 14px; color: rgba(255,255,255,.65); font-size: 14px; font-style: normal; }
+
+    /* ─── GALLERY ─── */
+    .gallery-item {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg,#e8ddd4,#d0c8be);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .gallery-item:hover { transform: scale(1.04); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
+
+    /* ─── DON ─── */
+    .mm-card {
+      background: #fff;
+      border: 1.5px solid #e0dbd5;
+      border-radius: 14px; padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      height: 100%;
+    }
+    .mm-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,.1); border-color: var(--wci-gold); }
+    .mm-badge { display: inline-block; padding: 9px 16px; border-radius: 10px; font-weight: 800; font-size: 13px; margin-bottom: 14px; }
+    .mm-orange { background:#ff6600; color:#fff; }
+    .mm-mtn    { background:#ffcc00; color:#000; }
+    .mm-wave   { background:#1a1aff; color:#fff; }
+    .mm-number { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.35rem; color:var(--wci-text); }
+    .mm-label  { font-size:13px; color:#888; margin-bottom:6px; }
+    .bank-card {
+      background:#fff; border:1.5px solid #e0dbd5;
+      border-radius:14px; padding:32px 36px;
+      box-shadow:0 3px 14px rgba(0,0,0,.06);
+    }
+    .bank-icon { width:64px;height:64px;border-radius:12px;background:#1a3a6b;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;flex-shrink:0; }
+    .iban-val { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.15rem; color:var(--wci-red); letter-spacing:.04em; }
+    .copy-btn { border:1.5px solid #ddd; border-radius:20px; background:none; font-size:12px; font-weight:700; color:#888; padding:5px 14px; cursor:pointer; transition:all .2s; font-family:'Open Sans',sans-serif; }
+    .copy-btn:hover { border-color:var(--wci-red); color:var(--wci-red); background:#fff5f5; }
+    .copy-btn.copied { border-color:#2ecc71; color:#2ecc71; background:#f0fff6; }
+
+    /* ─── CONTACT ─── */
+    .contact-info-item { display:flex; gap:16px; align-items:flex-start; margin-bottom:24px; }
+    .contact-icon { width:44px;height:44px;border-radius:50%;background:var(--wci-gray);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--wci-red);flex-shrink:0; }
+    .map-placeholder { border-radius:14px; background:linear-gradient(135deg,#e8f0e8,#d4e4d4); height:360px; display:flex;align-items:center;justify-content:center;font-size:64px;border:2px solid #d0d8d0; }
+    .contact-form .form-control { border-radius:8px; border:1.5px solid #ddd; padding:12px 16px; font-family:'Open Sans',sans-serif; transition:border-color .2s; }
+    .contact-form .form-control:focus { border-color:var(--wci-red); box-shadow:0 0 0 3px rgba(154,27,30,.1); }
+    .contact-form label { font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:#555; margin-bottom:6px; }
+
+    /* ─── FOOTER ─── */
+    footer { background:var(--wci-red); color:rgba(255,255,255,.85); }
+    footer a { color:rgba(255,255,255,.7); text-decoration:none; transition:color .2s; }
+    footer a:hover { color:#fff; }
+    .footer-divider { border-color:rgba(255,255,255,.15); }
+    .footer-social a { width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:inline-flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s; }
+    .footer-social a:hover { background:rgba(255,255,255,.25); }
+
+    /* ─── BREADCRUMB / PAGE HEADER ─── */
+    .page-header {
+      background: linear-gradient(135deg, var(--wci-red) 0%, var(--wci-dark) 100%);
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .page-header h1 { font-size:clamp(1.8rem,4vw,3rem); font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:.05em; }
+    .page-header p { color:rgba(255,255,255,.75); font-size:1.05rem; margin-top:10px; }
+
+    /* ─── TOAST ─── */
+    #toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a1a1a;color:#fff;padding:12px 28px;border-radius:30px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .35s;z-index:9999; }
+    #toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+
+    /* ─── CULTES ─── */
+    .culte-card { border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;height:100%; }
+    .culte-card:hover { transform:translateY(-5px); }
+    .culte-img { height:220px;display:flex;align-items:center;justify-content:center;font-size:64px; }
+    .culte-body { background:#fff;padding:24px; }
+    .culte-body h4 { font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px; }
+    .culte-badge { display:inline-block;background:var(--wci-gray);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:700;color:#555;margin-bottom:10px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:768px) {
+      .hero { min-height:80vh; }
+      .welcome-photo-wrap::before { display:none; }
+      .bank-card { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======= TOP BAR ======= -->
+<div class="topbar d-none d-md-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-geo-alt-fill me-1"></i>Akouedo Goshen, Abidjan – Côte d'Ivoire</span>
+    <div class="d-flex gap-3">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-youtube"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ======= NAVBAR ======= -->
+<nav class="navbar navbar-expand-lg sticky-top" style="background:var(--wci-red) !important; min-height:60px; padding:0; box-shadow:0 2px 12px rgba(0,0,0,.18);">
+  <div class="d-flex align-items-stretch w-100">
+
+    <!-- LOGO ZONE : fond bordeaux foncé, largeur fixe -->
+    <a href="#" data-page="accueil" style="
+      text-decoration:none;
+      display:flex; align-items:center; gap:10px;
+      background:#5a0e10;
+      padding:8px 18px;
+      flex-shrink:0;
+      min-width:220px;
+    ">
+      <!-- Emblème circulaire -->
+      <div style="
+        width:44px; height:44px; border-radius:50%;
+        background:rgba(255,255,255,.15);
+        border:2px solid rgba(255,255,255,.4);
+        display:flex; align-items:center; justify-content:center;
+        flex-shrink:0; overflow:hidden; font-size:20px; color:#fff;
+      ">✝</div>
+      <!-- Texte -->
+      <div style="line-height:1.25;">
+        <strong style="display:block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.04em;">Winners' Chapel International</strong>
+        <small style="font-size:9px;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.05em;">Akouedo Goshen</small>
+      </div>
+    </a>
+
+    <!-- LIENS ZONE : fond rouge WCI -->
+    <div class="d-flex align-items-center justify-content-end flex-grow-1 px-2" style="background:var(--wci-red); padding-left: 24px !important;">
+
+      <!-- Hamburger mobile -->
+      <button class="navbar-toggler border-0 d-lg-none ms-auto" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenuWci"
+              style="color:#fff; padding:6px 12px;">
+        <i class="bi bi-list" style="font-size:26px;color:#fff;"></i>
+      </button>
+
+      <!-- Liens desktop -->
+      <div class="collapse navbar-collapse d-lg-flex" id="navMenuWci">
+        <ul class="navbar-nav align-items-lg-stretch mb-0 ms-auto">
+          <li class="nav-item"><span class="nav-link-wci active-wci" data-page="accueil">Accueil</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="apropos">À propos</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="leadership">Leadership</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="cultes">Cultes ▾</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="ministeres">Ministères ▾</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="medias">Médias ▾</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="galerie">Galerie</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="don">Faire un don</span></li>
+          <li class="nav-item"><span class="nav-link-wci" data-page="contact">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<style>
+  .nav-link-wci {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: rgba(255,255,255,.9) !important;
+    letter-spacing: .01em;
+    padding: 20px 12px;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .nav-link-wci:hover { color: #fff !important; border-bottom-color: rgba(255,255,255,.45); }
+  .nav-link-wci.active-wci {
+    color: #fff !important;
+    border-bottom-color: #fff;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+  }
+  @media (max-width: 991px) {
+    .nav-link-wci { display:block; padding:10px 16px; border-bottom:none; border-left:3px solid transparent; }
+    .nav-link-wci.active-wci { border-left-color:#fff; border-bottom:none; background:rgba(255,255,255,.1); border-radius:4px; text-decoration:none; }
+    nav .d-flex { flex-direction:column; align-items:stretch !important; }
+    nav a[data-page="accueil"] { min-width:unset !important; }
+  }
+</style>
+
+<!-- ════════════════════════════════════════
+     PAGE 1 — ACCUEIL
+════════════════════════════════════════ -->
+<div id="page-accueil" class="page active">
+
+  <!-- ── HERO : photo foule plein écran ── -->
+  <section style="
+    position:relative;
+    min-height: 62vh;
+    background:
+      linear-gradient(to bottom, rgba(20,5,5,.25) 0%, rgba(20,5,5,.55) 100%),
+      url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1800&q=80') center/cover no-repeat;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  ">
+    <div style="position:relative;z-index:2;padding:60px 24px 60px;max-width:860px;margin:0 auto;">
+      <h1 style="
+        font-family:'Montserrat',sans-serif;
+        font-weight:900;
+        font-size:clamp(2rem,6vw,3.8rem);
+        color:#fff;
+        text-transform:uppercase;
+        line-height:1.1;
+        letter-spacing:.02em;
+        text-shadow:0 2px 24px rgba(0,0,0,.4);
+        margin-bottom:18px;
+        animation: fadeUp .9s ease both;
+      ">Bienvenue à la Chapelle des<br>Vainqueurs Akouedo Goshen</h1>
+      <p style="
+        font-size:clamp(1rem,2vw,1.2rem);
+        color:rgba(255,255,255,.9);
+        font-weight:300;
+        margin-bottom:36px;
+        animation: fadeUp 1.1s ease both;
+      ">Votre lieu de destiner, d'impact et de victoire en Christ.</p>
+      <button class="btn btn-red btn-lg px-5 py-3" data-page="cultes"
+              style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;animation:fadeUp 1.3s ease both;">
+        Nos Horaires de Culte
+      </button>
+    </div>
+  </section>
+
+  <!-- ── WELCOME : photo pasteur + texte ── -->
+  <section style="background:#fff; padding:64px 0;">
+    <div class="container">
+      <div class="row align-items-center justify-content-center g-5" style="max-width:860px;margin:0 auto;">
+
+        <!-- Photo pasteur -->
+        <div class="col-lg-4 col-md-5 fade-up">
+          <div style="border-radius:10px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.12);">
+            <div style="
+              width:100%; aspect-ratio:3/4;
+              background:linear-gradient(160deg,#c8a888,#8a6848);
+              display:flex; align-items:center; justify-content:center;
+              font-size:80px;
+            ">👤</div>
+          </div>
+        </div>
+
+        <!-- Texte -->
+        <div class="col-lg-6 col-md-7 fade-up">
+          <h2 style="
+            font-family:'Montserrat',sans-serif;
+            font-weight:900; font-size:1.5rem;
+            color:var(--wci-red);
+            text-transform:uppercase; letter-spacing:.06em;
+            margin-bottom:14px;
+          ">Une Famille Vous Attend</h2>
+          <p style="font-size:14.5px;color:#555;line-height:1.85;margin-bottom:16px;">
+            Paragraphe d'introduction court et chaleureux présentant l'église comme un lieu d'amour et de croissance spirituelle.
+          </p>
+          <a href="#" data-page="apropos" style="
+            color:var(--wci-red); font-weight:700; font-size:14px;
+            text-decoration:none; border-bottom:1px solid transparent;
+            transition:border-color .2s;
+            display:inline-flex; align-items:center; gap:6px;
+          " onmouseover="this.style.borderColor='var(--wci-red)'" onmouseout="this.style.borderColor='transparent'">
+            En savoir plus sur nous <i class="bi bi-chevron-right" style="font-size:12px;"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HORAIRES : bande grise 3 blocs ── -->
+  <section style="background:#f5f5f5; padding:40px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;">
+    <div class="container">
+      <div class="row g-0 justify-content-center">
+
+        <!-- Dimanche -->
+        <div class="col-md-4 fade-up">
+          <div class="d-flex align-items-center gap-3 px-4 py-3">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0;">
+              <i class="bi bi-clock-fill"></i>
+            </div>
+            <div>
+              <p style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 2px;">Dimanche</p>
+              <p style="font-size:13px;color:#555;margin:0;">Culte de Célébration</p>
+              <p style="font-size:13px;color:#555;margin:0;">8h00 - 10h30</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mercredi -->
+        <div class="col-md-4 fade-up" style="border-left:1px solid #ddd;border-right:1px solid #ddd;">
+          <div class="d-flex align-items-center gap-3 px-4 py-3">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0;">
+              <i class="bi bi-calendar-check-fill"></i>
+            </div>
+            <div>
+              <p style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 2px;">Mercredi</p>
+              <p style="font-size:13px;color:#555;margin:0;">Culte de Communion</p>
+              <p style="font-size:13px;color:#555;margin:0;">18h30 - 20h00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vendredi -->
+        <div class="col-md-4 fade-up">
+          <div class="d-flex align-items-center gap-3 px-4 py-3">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0;">
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <div>
+              <p style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;margin:0 0 2px;">Vendredi</p>
+              <p style="font-size:13px;color:#555;margin:0;">Veillée de Prière</p>
+              <p style="font-size:13px;color:#555;margin:0;">22h00 - Aube</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-accueil -->
+
+
+<!-- ════════════════════════════════════════
+     PAGE 2 — À PROPOS
+════════════════════════════════════════ -->
+<div id="page-apropos" class="page">
+
+  <!-- NAVBAR SECONDAIRE (comme la maquette) -->
+  <div style="background:#fff; border-bottom:1px solid #eee; padding:10px 0;">
+    <div class="container d-flex flex-wrap gap-3 justify-content-center">
+      <span style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:#888;cursor:pointer;" data-page="accueil">Home</span>
+      <span style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--wci-red);border-bottom:2px solid var(--wci-red);padding-bottom:2px;">À propos</span>
+      <span style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:#888;cursor:pointer;" data-page="medias">Resources</span>
+      <span style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:#888;cursor:pointer;">Blog</span>
+      <span style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:#888;cursor:pointer;" data-page="contact">Contact</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1 : NOTRE HISTOIRE & VISION -->
+  <section style="padding:72px 0 60px;">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <h1 class="section-title text-red" style="font-size:clamp(1.8rem,4vw,2.8rem);">Notre Histoire &amp; Notre Vision</h1>
+        <div class="divider-red mx-auto mt-3"></div>
+      </div>
+
+      <!-- Photo église + texte -->
+      <div class="row g-5 align-items-start fade-up">
+        <div class="col-lg-5">
+          <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.12);">
+            <!-- Placeholder bâtiment église -->
+            <div style="height:280px;background:linear-gradient(135deg,#c8dfc8,#9bbf9b);display:flex;align-items:center;justify-content:center;font-size:80px;">🏛️</div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <p class="text-dark" style="line-height:1.95;font-size:15px;">
+            La Winners' Chapel International Akouedo Goshen est une église évangélique fondée en 2020–2017, dans un vœu d'être d'une vraie Église au service de la récession, fondée sur l'amour et la parole, offrant à chaque famille un cadre spirituel propice à l'épanouissement personnel et collectif.
+          </p>
+          <p class="text-muted mt-3" style="line-height:1.95;font-size:15px;">
+            Nous faisons partie du réseau mondial de Winners' Chapel International, fondé par le Docteur David Oyedepo, sous la vision de répandre l'Évangile dans le monde entier. Chaque culte, chaque programme, chaque ministère est conçu pour vous rapprocher de Dieu et vous équiper pour votre destinée divine.
+          </p>
+          <p class="text-muted" style="line-height:1.95;font-size:15px;">
+            Par votre présence parmi nous, vous contribuez à l'ensemble de la transformation spirituelle, vous faites partie d'une grande famille unie dans la foi et dans l'amour de Christ.
+          </p>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <button class="btn btn-red px-4 py-2" data-page="leadership">
+              <i class="bi bi-person-fill me-2"></i>Notre Leadership
+            </button>
+            <button class="btn btn-outline-red px-4 py-2" data-page="contact">
+              <i class="bi bi-envelope me-2"></i>Nous contacter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES CLÉS -->
+  <section style="background:var(--wci-red);padding:52px 0;">
+    <div class="container">
+      <div class="row g-4 text-center text-white">
+        <div class="col-6 col-md-3 fade-up">
+          <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">10+</h2>
+          <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Années de ministère</p>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">500+</h2>
+          <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Membres actifs</p>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">8</h2>
+          <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Ministères actifs</p>
+        </div>
+        <div class="col-6 col-md-3 fade-up">
+          <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">3</h2>
+          <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Cultes hebdomadaires</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : VALEURS FONDAMENTALES -->
+  <section style="padding:72px 0 80px;background:#fff;">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <h2 class="section-title text-red" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">Nos Valeurs Fondamentales</h2>
+        <div class="divider-red mx-auto mt-3"></div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Foi -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">✝</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Foi</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">La Foi est le fondement de tout ce que nous sommes et de tout ce que nous faisons. Nous croyons fermement en la Parole vivante de Dieu et en ses promesses immuables pour nos vies.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intégrité -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">🛡</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Intégrité</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">Intégrité et honnêteté dans tous nos engagements. Nous nous efforçons de refléter le caractère de Christ dans chacune de nos actions, aussi bien en public qu'en privé.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amour -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">♥</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Amour</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">L'amour est notre identité. Nous accueillons chaque personne avec chaleur, compassion et bienveillance, reflétant l'amour inconditionnel de notre Père céleste.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Excellence -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">⭐</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Excellence</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">Excellence dans tout ce que nous faisons, au service du Roi des rois. Nous ne nous contentons pas du minimum, car nous servons un Dieu qui mérite le meilleur.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">🤝</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Service</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">Servir Dieu et notre communauté est un honneur, non une obligation. Chaque membre est encouragé à découvrir ses dons et à les mettre au service de l'Église et des autres.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Communauté -->
+        <div class="col-md-6 fade-up">
+          <div class="d-flex gap-4 align-items-start p-4" style="border:1.5px solid #eee;border-radius:14px;background:#fff;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 8px 28px rgba(154,27,30,.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--wci-red);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">👥</div>
+            <div>
+              <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--wci-red);text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin-bottom:8px;">Communauté</h5>
+              <p class="text-muted small mb-0" style="line-height:1.8;">Nous sommes une famille soudée. La croissance spirituelle se vit en communauté, dans la fraternité, l'encouragement mutuel et le partage de la Parole de Dieu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="verse-banner">
+    <div class="container text-center">
+      <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;font-size:1.5rem;margin-bottom:16px;">Rejoignez Notre Famille !</h3>
+      <p style="color:rgba(255,255,255,.8);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;">Nous vous accueillons avec joie chaque dimanche à partir de 8h00. Venez vivre une expérience de culte qui transforme des vies.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <button class="btn btn-light px-5 py-3" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--wci-red);" data-page="cultes">
+          <i class="bi bi-calendar-event me-2"></i>Nos Cultes
+        </button>
+        <button class="btn btn-outline-light px-5 py-3" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" data-page="contact">
+          <i class="bi bi-envelope me-2"></i>Nous Écrire
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 3 — LEADERSHIP
+════════════════════════════════════════ -->
+<div id="page-leadership" class="page">
+  <div class="page-header">
+    <h1>Notre Leadership</h1>
+    <p>Les bergers que Dieu a placés sur cette maison</p>
+  </div>
+  <section style="padding:80px 0;">
+    <div class="container">
+
+      <!-- Pasteur Principal -->
+      <div class="row align-items-center g-5 mb-6" style="margin-bottom:80px;">
+        <div class="col-lg-5 fade-up">
+          <div class="welcome-photo-wrap">
+            <div class="welcome-photo-placeholder" style="aspect-ratio:4/5;border-radius:14px;background:linear-gradient(135deg,#f0e8e0,#d4c8bc);display:flex;align-items:center;justify-content:center;font-size:90px;">👤</div>
+          </div>
+        </div>
+        <div class="col-lg-7 fade-up">
+          <span class="badge bg-red mb-3 px-3 py-2" style="font-family:'Montserrat',sans-serif;letter-spacing:.08em;font-size:11px;">Pasteur Principal</span>
+          <h2 class="section-title text-red mb-2">Pasteur [Nom Complet]</h2>
+          <div class="divider-red mb-4"></div>
+          <p class="text-muted mb-3" style="line-height:1.9;">C'est avec une immense joie et un cœur reconnaissant que je vous accueille dans notre famille spirituelle. Winners' Chapel Akouedo Goshen est une église fondée sur la Parole vivante de Dieu, un lieu où chaque âme est précieuse aux yeux de notre Père céleste.</p>
+          <p class="text-muted mb-4" style="line-height:1.9;">Notre engagement est de vous accompagner dans votre marche avec Dieu, de vous équiper pour votre destinée et de vous voir marcher dans la victoire totale que Christ vous a acquise.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-red px-4"><i class="bi bi-facebook me-2"></i>Facebook</a>
+            <a href="#" class="btn btn-outline-red px-4"><i class="bi bi-envelope me-2"></i>Email</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Équipe pastorale -->
+      <div class="text-center mb-5 fade-up">
+        <h3 class="section-title mb-2" style="font-size:1.8rem;">Équipe Pastorale</h3>
+        <div class="divider-red mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up">
+          <div class="pastor-card">
+            <div class="pastor-photo">👤</div>
+            <div class="pastor-card-body">
+              <h5>Pasteur Assistant [Nom]</h5>
+              <p class="title">Pasteur Assistant</p>
+              <p class="text-muted small mt-2">Responsable du ministère de prière et de l'intercession au sein de l'église.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="pastor-card">
+            <div class="pastor-photo">👤</div>
+            <div class="pastor-card-body">
+              <h5>Pasteur [Nom]</h5>
+              <p class="title">Responsable Jeunesse</p>
+              <p class="text-muted small mt-2">Dédié à encadrer et former la jeunesse dans leur destinée spirituelle.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="pastor-card">
+            <div class="pastor-photo">👤</div>
+            <div class="pastor-card-body">
+              <h5>Pasteure [Nom]</h5>
+              <p class="title">Responsable Femmes</p>
+              <p class="text-muted small mt-2">Passionnée pour l'épanouissement spirituel et social des femmes de l'église.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 4 — CULTES
+════════════════════════════════════════ -->
+<div id="page-cultes" class="page">
+
+  <section style="padding:72px 0 80px; background:#fff;">
+    <div class="container" style="max-width:820px;">
+
+      <!-- GRAND TITRE CENTRÉ -->
+      <div class="text-center mb-5 fade-up">
+        <h1 class="text-red fw-900 text-uppercase" style="font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;">
+          Nos Horaires de Culte &amp;<br>Programmes
+        </h1>
+        <div class="divider-red mx-auto mt-3"></div>
+      </div>
+
+      <!-- ── CULTES HEBDOMADAIRES ── -->
+      <div class="mb-4 fade-up">
+        <h2 class="text-red fw-900 text-uppercase mb-4"
+            style="font-family:'Montserrat',sans-serif;font-size:1.1rem;letter-spacing:.08em;border-bottom:2px solid #f0f0f0;padding-bottom:12px;">
+          Cultes Hebdomadaires
+        </h2>
+
+        <!-- Ligne DIMANCHE -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 mb-2 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span class="fw-900 text-uppercase" style="font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.06em;">Dimanche</span>
+            <span class="text-muted mx-2">—</span>
+            <span style="font-size:14px;">Culte de Célébration</span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            8h00 &amp; 10h30
+          </div>
+        </div>
+
+        <!-- Ligne MERCREDI -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 mb-2 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span class="fw-900 text-uppercase" style="font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.06em;">Mercredi</span>
+            <span class="text-muted mx-2">—</span>
+            <span style="font-size:14px;">Culte de Communion</span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            18h30
+          </div>
+        </div>
+
+        <!-- Ligne VENDREDI -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-clock-fill"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span class="fw-900 text-uppercase" style="font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.06em;">Vendredi</span>
+            <span class="text-muted mx-2">—</span>
+            <span style="font-size:14px;">Veillée de Prière</span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            22h00
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PROGRAMMES SPÉCIAUX ── -->
+      <div class="mt-5 fade-up">
+        <h2 class="text-red fw-900 text-uppercase mb-4"
+            style="font-family:'Montserrat',sans-serif;font-size:1.1rem;letter-spacing:.08em;border-bottom:2px solid #f0f0f0;padding-bottom:12px;">
+          Programmes Spéciaux
+        </h2>
+
+        <!-- Programme 1 -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 mb-2 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span style="font-size:14px;">Quartier mensuel — <strong>Séminaire</strong></span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            08 mai — 10h30
+          </div>
+        </div>
+
+        <!-- Programme 2 -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 mb-2 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span style="font-size:14px;">Quartier 2 mensuel — <strong>Conférence</strong></span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            28 août — 18h30
+          </div>
+        </div>
+
+        <!-- Programme 3 -->
+        <div class="d-flex align-items-center gap-3 py-3 px-4 fade-up"
+             style="border:1.5px solid #eee;border-radius:10px;background:#fff;transition:box-shadow .2s;"
+             onmouseover="this.style.boxShadow='0 4px 18px rgba(154,27,30,.09)'"
+             onmouseout="this.style.boxShadow='none'">
+          <div style="width:38px;height:38px;border-radius:8px;background:var(--wci-red);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:18px;">
+            <i class="bi bi-calendar3"></i>
+          </div>
+          <div class="flex-grow-1">
+            <span style="font-size:14px;">Quartier 2 mensuel — <strong>Conférence</strong></span>
+          </div>
+          <div class="fw-700 text-dark text-end" style="font-family:'Montserrat',sans-serif;font-size:14px;white-space:nowrap;">
+            27 juin — 22h00
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-5 fade-up">
+        <p class="text-muted mb-4" style="font-size:15px;">Tous nos cultes se tiennent dans notre salle principale à Akouedo Goshen, Abidjan.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <button class="btn btn-red px-5 py-3" data-page="contact">
+            <i class="bi bi-geo-alt-fill me-2"></i>Nous localiser
+          </button>
+          <button class="btn btn-outline-red px-5 py-3" data-page="don">
+            <i class="bi bi-heart-fill me-2"></i>Soutenir l'église
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 5 — MINISTÈRES
+════════════════════════════════════════ -->
+<div id="page-ministeres" class="page">
+
+  <style>
+    .min-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,.08);
+      transition: transform .22s, box-shadow .22s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .min-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.13);
+    }
+    .min-card-photo {
+      height: 200px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #c8a880, #a07848);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px;
+      flex-shrink: 0;
+    }
+    .min-card-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .min-card-body {
+      padding: 22px 20px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .min-card-body h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--wci-red);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .min-card-body p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.75;
+      flex: 1;
+    }
+    .min-card-body .btn-min {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--wci-red);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 9px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      width: fit-content;
+    }
+    .min-card-body .btn-min:hover {
+      background: var(--wci-light);
+      transform: translateY(-1px);
+    }
+  </style>
+
+  <section style="padding:68px 0 80px; background:#fff;">
+    <div class="container">
+
+      <!-- TITRE -->
+      <div class="text-center mb-5 fade-up">
+        <h1 class="text-red fw-900 text-uppercase"
+            style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:.04em;">
+          Nos Ministères
+        </h1>
+        <div class="divider-red mx-auto mt-3"></div>
+      </div>
+
+      <!-- GRILLE — Rangée 1 : 5 colonnes -->
+      <div class="row g-3 mb-3">
+
+        <!-- Childrens -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#e8c89a,#c8945a);">
+              <span>🧒</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Childrens</h5>
+              <p>Les childrens ou children et lieux des leurnens, participant des chiffents dans la voie du Seigneur.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jeunesse -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#c8a0d0,#9060a0);">
+              <span>🎤</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Jeunesse</h5>
+              <p>Les jeuntes sont choii en vous soovoir tan aiamange et cant des caudas et l'hnorteur du crope.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Choir -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#9a3a3a,#6a1a1a);">
+              <span>🎶</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Choir</h5>
+              <p>Le Choir communication anon, intermections de détsaststation de l'anpretation du Choir.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ushers -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#3a5a8a,#1a3a6a);">
+              <span>🤵</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Ushers</h5>
+              <p>Les ushers organisent l'Evangelisme en vzaon-transitions et pertilliant l'Evangelisme.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Groupe des Femmes -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#d0a0c0,#a06080);">
+              <span>👩</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Groupe des Femmes</h5>
+              <p>Groupe des wommen tt. flemmen a ervaté voux groupes et vos somrtières.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /rangée 1 -->
+
+      <!-- GRILLE — Rangée 2 -->
+      <div class="row g-3">
+
+        <!-- Hommes -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#6a8a6a,#3a5a3a);">
+              <span>👨</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Hommes</h5>
+              <p>Développer des hommes forts en Dieu, des leaders dans leur famille et leur communauté.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prière -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#8a6a3a,#5a3a1a);">
+              <span>🙏</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Prière</h5>
+              <p>L'épine dorsale de l'église. Des guerriers de prière qui intercèdent sans relâche pour l'église et les nations.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Famille -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#7a9a5a,#4a6a2a);">
+              <span>👨‍👩‍👧‍👦</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Famille</h5>
+              <p>Accompagner les couples et familles pour construire des foyers solides sur la Parole de Dieu.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Évangélisation -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#5a7a9a,#2a4a6a);">
+              <span>🌍</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Évangélisation</h5>
+              <p>Porter la bonne nouvelle au-delà des murs de l'église, dans les quartiers et les communautés.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media -->
+        <div class="col-6 col-md-4 col-lg fade-up">
+          <div class="min-card">
+            <div class="min-card-photo" style="background:linear-gradient(160deg,#3a3a6a,#1a1a4a);">
+              <span>📱</span>
+            </div>
+            <div class="min-card-body">
+              <h5>Média</h5>
+              <p>Diffuser la Parole de Dieu via les réseaux sociaux, YouTube et toutes les plateformes digitales.</p>
+              <button class="btn-min">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /rangée 2 -->
+
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 6 — MÉDIAS
+════════════════════════════════════════ -->
+<div id="page-medias" class="page">
+
+  <style>
+    /* ── Audio row ── */
+    .audio-row {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 16px;
+      border: 1.5px solid #eee;
+      border-radius: 10px;
+      background: #fff;
+      margin-bottom: 10px;
+      transition: box-shadow .2s;
+    }
+    .audio-row:hover { box-shadow: 0 4px 18px rgba(154,27,30,.09); }
+    .audio-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--wci-red);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 18px; flex-shrink: 0;
+    }
+    .audio-info { flex: 1; }
+    .audio-info strong { display: block; font-family:'Montserrat',sans-serif; font-weight:700; font-size:13.5px; color:var(--wci-text); }
+    .audio-info span { font-size:12px; color:#999; }
+    .audio-btns { display: flex; gap: 8px; }
+    .audio-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--wci-red); color: #fff;
+      border: none; cursor: pointer; font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, transform .15s;
+    }
+    .audio-btn:hover { background: var(--wci-light); transform: scale(1.08); }
+
+    /* ── YouTube embed ── */
+    .yt-wrap {
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.1);
+      background: #000;
+    }
+    .yt-wrap iframe { display:block; width:100%; aspect-ratio:16/9; border:none; }
+
+    /* ── Verset du Jour ── */
+    .verset-box {
+      background: var(--wci-red);
+      border-radius: 14px;
+      padding: 40px 28px;
+      text-align: center;
+      color: #fff;
+      position: sticky; top: 90px;
+    }
+    .verset-box h4 {
+      font-family:'Montserrat',sans-serif; font-weight:900;
+      text-transform:uppercase; letter-spacing:.1em;
+      font-size:13px; color:rgba(255,255,255,.7);
+      margin-bottom: 20px;
+    }
+    .verset-box blockquote {
+      font-family:'Montserrat',sans-serif;
+      font-weight:800; font-size:1.15rem;
+      line-height:1.65; color:#fff;
+      border:none; padding:0; margin:0 0 16px;
+      text-transform: uppercase;
+    }
+    .verset-box cite {
+      font-size:13px; color:rgba(255,255,255,.7);
+      font-style:normal; font-weight:600;
+    }
+
+    /* section labels */
+    .media-section-label {
+      font-family:'Montserrat',sans-serif;
+      font-weight:900; font-size:1.1rem;
+      text-transform:uppercase; letter-spacing:.08em;
+      color: var(--wci-red);
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <section style="padding:68px 0 80px; background:#fff;">
+    <div class="container">
+
+      <!-- GRAND TITRE -->
+      <div class="text-center mb-5 fade-up">
+        <h1 class="text-red fw-900 text-uppercase"
+            style="font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:.03em;line-height:1.2;">
+          Nos Enseignements &amp; Médias
+        </h1>
+        <div class="divider-red mx-auto mt-3"></div>
+      </div>
+
+      <!-- ── VIDÉOS RÉCENTES ── -->
+      <div class="mb-5">
+        <h2 class="media-section-label fade-up">Vidéos Récentes</h2>
+        <div class="row g-3">
+
+          <div class="col-md-4 fade-up">
+            <div class="yt-wrap">
+              <iframe src="https://www.youtube.com/embed/videoseries?list=PLnUZR_ZsKuZDVVulC09Ea0Noo8kVwTi5N"
+                      title="Winners Chapel Sermon 1"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <p class="mt-2 mb-0" style="font-size:13.5px;font-weight:700;">Sermon – Akouedo Goshen</p>
+            <p class="text-muted" style="font-size:12px;">YouTube · Winners Chapel</p>
+          </div>
+
+          <div class="col-md-4 fade-up">
+            <div class="yt-wrap">
+              <iframe src="https://www.youtube.com/embed/RjUFjEG0T8k"
+                      title="Winners Chapel International Akouedo Goshen"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <p class="mt-2 mb-0" style="font-size:13.5px;font-weight:700;">Winners' Chapel International Akouedo Goshen</p>
+            <p class="text-muted" style="font-size:12px;">YouTube · YouTube</p>
+          </div>
+
+          <div class="col-md-4 fade-up">
+            <div class="yt-wrap">
+              <iframe src="https://www.youtube.com/embed/NhHbIRdXLhA"
+                      title="Winners Chapel International Akouedo Goshen 2"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <p class="mt-2 mb-0" style="font-size:13.5px;font-weight:700;">Winners' Chapel International Akouedo Goshen</p>
+            <p class="text-muted" style="font-size:12px;">YouTube · YouTube</p>
+          </div>
+
+        </div>
+
+        <!-- Bouton YouTube -->
+        <div class="text-center mt-4 fade-up">
+          <a href="https://www.youtube.com/@WinnersChapelAkouedoGoshen" target="_blank"
+             class="btn btn-red px-5 py-3">
+            <i class="bi bi-youtube me-2"></i>Voir toutes les vidéos sur YouTube
+          </a>
+        </div>
+      </div>
+
+      <!-- ── MESSAGES AUDIO + VERSET DU JOUR ── -->
+      <div class="row g-4">
+
+        <!-- MESSAGES AUDIO — gauche -->
+        <div class="col-lg-8">
+          <h2 class="media-section-label fade-up">Messages Audio</h2>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Sermon Spécial – Akouedo Goshen</strong>
+              <span>Dimanche 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Messages Audio – International Akouedo Goshen</strong>
+              <span>11 novembre 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Messages Chapel' Akouedo Goshen</strong>
+              <span>11 novembre 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Messages International Akouedo Goshen</strong>
+              <span>Septembre 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Culte de Communion – Enseignement</strong>
+              <span>Octobre 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+          <div class="audio-row fade-up">
+            <div class="audio-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <div class="audio-info">
+              <strong>Veillée de Prière – Akouedo Goshen</strong>
+              <span>Août 2024</span>
+            </div>
+            <div class="audio-btns">
+              <button class="audio-btn" title="Écouter"><i class="bi bi-play-fill"></i></button>
+              <button class="audio-btn" title="Télécharger"><i class="bi bi-download"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VERSET DU JOUR — droite -->
+        <div class="col-lg-4 fade-up">
+          <h2 class="media-section-label">Verset du Jour</h2>
+          <div class="verset-box">
+            <h4>✦ Verset du Jour ✦</h4>
+            <blockquote id="versetText">
+              « Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle. »
+            </blockquote>
+            <cite id="versetRef">— Jean 3:16</cite>
+            <hr style="border-color:rgba(255,255,255,.2);margin:20px 0;">
+            <button class="btn btn-outline-light btn-sm w-100" onclick="nextVerset()" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;">
+              <i class="bi bi-arrow-clockwise me-2"></i>Verset suivant
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /row audio + verset -->
+
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 7 — GALERIE
+════════════════════════════════════════ -->
+<div id="page-galerie" class="page">
+  <div class="page-header">
+    <h1>Galerie Photo</h1>
+    <p>Moments de grâce et de victoire capturés</p>
+  </div>
+  <section style="padding:80px 0;">
+    <div class="container">
+      <!-- Filtres -->
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5 fade-up gallery-filters">
+        <button class="btn btn-red btn-sm px-4">Tous</button>
+        <button class="btn btn-outline-red btn-sm px-4">Cultes</button>
+        <button class="btn btn-outline-red btn-sm px-4">Événements</button>
+        <button class="btn btn-outline-red btn-sm px-4">Ministères</button>
+        <button class="btn btn-outline-red btn-sm px-4">Conventions</button>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🙌</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🎶</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">📖</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🕊️</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">✝️</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🙏</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🎤</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🕯️</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">👑</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🌟</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🎺</div></div>
+        <div class="col-6 col-md-4 col-lg-3 fade-up"><div class="gallery-item">🔥</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 8 — FAIRE UN DON
+════════════════════════════════════════ -->
+<div id="page-don" class="page">
+
+  <style>
+    /* ── Page don ── */
+    .don-page-wrap {
+      background: #f0f2f5;
+      min-height: 100vh;
+      padding: 64px 0 80px;
+    }
+
+    /* Cartes Mobile Money */
+    .mm-new-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      padding: 28px 24px 24px;
+      text-align: center;
+      height: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .mm-new-card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,.1);
+      transform: translateY(-3px);
+    }
+    .mm-logo-wrap {
+      height: 64px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .mm-logo-wrap img { max-height: 60px; max-width: 140px; object-fit: contain; }
+    .mm-new-label { font-size: 13px; color: #666; margin-bottom: 4px; }
+    .mm-new-number {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      color: #1a1a1a;
+      letter-spacing: .01em;
+      margin-bottom: 16px;
+    }
+    .mm-copy-btn {
+      background: var(--wci-red);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 22px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .mm-copy-btn:hover { background: var(--wci-light); transform: scale(1.04); }
+
+    /* Carte Virement */
+    .bank-new-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #e8e8e8;
+      padding: 28px 32px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+    .bank-new-card h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #1a1a1a;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .bank-row { display: flex; align-items: center; gap: 20px; }
+    .bank-icon-new {
+      width: 64px; height: 64px; border-radius: 8px;
+      background: #1a2a6c;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: #fff; flex-shrink: 0;
+    }
+    .bank-detail p { margin: 0 0 4px; font-size: 14px; }
+    .bank-detail .iban-num {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 1.1rem; color: #1a1a1a;
+    }
+    .bank-detail .bank-sub { font-size: 13px; color: #555; }
+
+    /* Section label */
+    .don-section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <div class="don-page-wrap">
+    <div class="container" style="max-width:900px;">
+
+      <!-- TITRE -->
+      <div class="text-center mb-2 fade-up">
+        <h1 style="
+          font-family:'Montserrat',sans-serif;
+          font-weight:900; font-size:clamp(1.8rem,5vw,3rem);
+          color:var(--wci-red);
+          text-transform:uppercase;
+          letter-spacing:.04em;
+          line-height:1.1;
+        ">Soutenir l'Œuvre de Dieu</h1>
+        <div class="divider-red mx-auto mt-3 mb-4"></div>
+        <p class="text-muted fade-up" style="max-width:560px;margin:0 auto;font-size:14.5px;line-height:1.85;">
+          Donnez en vier et notre. Winners Chapel true noit qua sallete pour allon aoures possible, soutenir l'Œuvre de Dieu.<br>
+          <em>(2 Corinthiens 9:6-8)</em>
+        </p>
+      </div>
+
+      <!-- ── MOBILE MONEY ── -->
+      <div class="mt-5 mb-4 fade-up">
+        <p class="don-section-label">Donner via Mobile Money</p>
+        <div class="row g-3">
+
+          <!-- Orange Money -->
+          <div class="col-md-4 fade-up">
+            <div class="mm-new-card">
+              <div class="mm-logo-wrap">
+                <!-- Logo Orange Money SVG inline -->
+                <svg viewBox="0 0 160 60" width="140" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="160" height="60" rx="6" fill="#fff"/>
+                  <!-- Flèche orange -->
+                  <polygon points="18,30 36,12 36,22 54,22 54,38 36,38 36,48" fill="#FF6600"/>
+                  <!-- Flèche bleue -->
+                  <polygon points="22,30 40,48 40,38 58,38 58,22 40,22 40,12" fill="#0066CC" opacity=".85"/>
+                  <text x="66" y="28" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#FF6600">Orange</text>
+                  <text x="66" y="46" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#FF6600">Money</text>
+                </svg>
+              </div>
+              <p class="mm-new-label">Orange Money :</p>
+              <p class="mm-new-number">#144*…99.0002</p>
+              <button class="mm-copy-btn" onclick="copyNum('#144*99.0002', this)">📋 Copier le numéro</button>
+            </div>
+          </div>
+
+          <!-- MTN Mobile Money -->
+          <div class="col-md-4 fade-up">
+            <div class="mm-new-card">
+              <div class="mm-logo-wrap">
+                <svg viewBox="0 0 160 60" width="140" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="160" height="60" rx="6" fill="#fff"/>
+                  <!-- Fond jaune MTN -->
+                  <rect x="4" y="6" width="52" height="48" rx="8" fill="#FFCC00"/>
+                  <text x="10" y="26" font-family="Arial Black" font-weight="900" font-size="11" fill="#1a1a1a">MTN</text>
+                  <text x="6" y="40" font-family="Arial" font-size="8" fill="#1a1a1a">Mobile</text>
+                  <text x="6" y="50" font-family="Arial" font-size="8" fill="#1a1a1a">Money</text>
+                  <!-- icône téléphone -->
+                  <rect x="38" y="10" width="14" height="22" rx="3" fill="#1a1a1a"/>
+                  <rect x="40" y="12" width="10" height="16" rx="1" fill="#FFCC00"/>
+                  <circle cx="45" cy="30" r="1.5" fill="#fff"/>
+                  <text x="62" y="28" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#FFCC00">MTN</text>
+                  <text x="62" y="46" font-family="Arial,sans-serif" font-size="11" fill="#555">Mobile Money</text>
+                </svg>
+              </div>
+              <p class="mm-new-label">MTN Mobile Money :</p>
+              <p class="mm-new-number">#1002025906</p>
+              <button class="mm-copy-btn" onclick="copyNum('#1002025906', this)">📋 Copier le numéro</button>
+            </div>
+          </div>
+
+          <!-- Wave -->
+          <div class="col-md-4 fade-up">
+            <div class="mm-new-card">
+              <div class="mm-logo-wrap">
+                <svg viewBox="0 0 160 60" width="140" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="160" height="60" rx="6" fill="#fff"/>
+                  <!-- W stylisé Wave -->
+                  <path d="M12,15 L22,45 L30,28 L38,45 L48,15" stroke="#00BCD4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="56" cy="30" r="3" fill="#9C27B0"/>
+                  <text x="64" y="36" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="#1a1a1a">wave</text>
+                </svg>
+              </div>
+              <p class="mm-new-label">Diluner Wave :</p>
+              <p class="mm-new-number">#141*2544-0200</p>
+              <button class="mm-copy-btn" onclick="copyNum('#141*2544-0200', this)">📋 Copier le numéro</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── VIREMENT BANCAIRE ── -->
+      <div class="fade-up">
+        <div class="bank-new-card">
+          <h5>Virement Bancaire</h5>
+          <div class="bank-row">
+            <!-- Icône banque -->
+            <div class="bank-icon-new">
+              <svg viewBox="0 0 40 40" width="36" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="18" width="32" height="4" fill="#fff" rx="1"/>
+                <rect x="6" y="22" width="4" height="12" fill="#fff" rx="1"/>
+                <rect x="13" y="22" width="4" height="12" fill="#fff" rx="1"/>
+                <rect x="20" y="22" width="4" height="12" fill="#fff" rx="1"/>
+                <rect x="27" y="22" width="4" height="12" fill="#fff" rx="1"/>
+                <polygon points="20,4 36,18 4,18" fill="#fff"/>
+                <rect x="4" y="34" width="32" height="3" fill="#fff" rx="1"/>
+              </svg>
+            </div>
+            <div class="bank-detail">
+              <p class="iban-num">IBAN: 0BAN-111EFM097-0000-8536002</p>
+              <p class="bank-sub">Acconte : WINNERS' CHAPEL</p>
+              <p class="bank-sub">Aumpite : GOSHEN</p>
+            </div>
+            <button class="mm-copy-btn ms-auto" style="white-space:nowrap;" onclick="copyNum('0BAN111EFM09700008536002', this)">📋 Copier</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PAGE 9 — CONTACT
+════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-header">
+    <h1>Nous Contacter</h1>
+    <p>Nous sommes là pour vous accueillir et vous répondre</p>
+  </div>
+  <section style="padding:80px 0;">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Infos + Carte -->
+        <div class="col-lg-6 fade-up">
+          <h3 class="section-title text-red mb-3" style="font-size:1.6rem;">Nous Trouver</h3>
+          <div class="divider-red mb-4"></div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <p class="fw-700 mb-1">Adresse</p>
+              <p class="text-muted small">Akouedo Goshen, Abidjan<br>Côte d'Ivoire</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <p class="fw-700 mb-1">Téléphone</p>
+              <p class="text-muted small">+225 XX XX XX XX XX</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <p class="fw-700 mb-1">Email</p>
+              <p class="text-muted small"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="74171b1a001517003403171d59151f1b0111101b5a171d">[email&#160;protected]</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-clock-fill"></i></div>
+            <div>
+              <p class="fw-700 mb-1">Bureaux ouverts</p>
+              <p class="text-muted small">Lundi – Vendredi : 9h00 – 17h00<br>Dimanche : 7h00 – 12h00</p>
+            </div>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="mt-4">
+            <p class="fw-700 mb-3">Suivez-nous</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#" class="btn btn-red btn-sm px-3"><i class="bi bi-facebook me-1"></i>Facebook</a>
+              <a href="#" class="btn btn-red btn-sm px-3"><i class="bi bi-youtube me-1"></i>YouTube</a>
+              <a href="#" class="btn btn-red btn-sm px-3"><i class="bi bi-instagram me-1"></i>Instagram</a>
+            </div>
+          </div>
+
+          <!-- Carte -->
+          <div class="map-placeholder mt-4">🗺️</div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="col-lg-6 fade-up">
+          <h3 class="section-title text-red mb-3" style="font-size:1.6rem;">Nous Écrire</h3>
+          <div class="divider-red mb-4"></div>
+          <div class="contact-form">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label>Prénom</label>
+                <input type="text" class="form-control" placeholder="Votre prénom"/>
+              </div>
+              <div class="col-sm-6">
+                <label>Nom</label>
+                <input type="text" class="form-control" placeholder="Votre nom"/>
+              </div>
+              <div class="col-12">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="votre@email.com"/>
+              </div>
+              <div class="col-12">
+                <label>Téléphone</label>
+                <input type="tel" class="form-control" placeholder="+225 XX XX XX XX XX"/>
+              </div>
+              <div class="col-12">
+                <label>Sujet</label>
+                <select class="form-control">
+                  <option>Demande de prière</option>
+                  <option>Renseignement général</option>
+                  <option>Counseling pastoral</option>
+                  <option>Intégration à l'église</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label>Message</label>
+                <textarea class="form-control" rows="5" placeholder="Votre message..."></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-red w-100 py-3" type="button">
+                  <i class="bi bi-send-fill me-2"></i>Envoyer le message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ======= FOOTER ======= -->
+<footer style="background:var(--wci-red);padding:24px 0 16px;">
+  <div class="container">
+    <!-- Copyright centré -->
+    <p style="color:rgba(255,255,255,.85);font-size:13px;text-align:center;margin-bottom:14px;">
+      © 2024 Winners' Chapel International Akouedo Goshen. Tous droits réservés.
+    </p>
+    <!-- Réseaux sociaux centrés -->
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="#" style="color:rgba(255,255,255,.8);font-size:22px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.8)'">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="#" style="color:rgba(255,255,255,.8);font-size:22px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.8)'">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+      <a href="#" style="color:rgba(255,255,255,.8);font-size:22px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.8)'">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="#" style="color:rgba(255,255,255,.8);font-size:22px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.8)'">
+        <i class="bi bi-youtube"></i>
+      </a>
+    </div>
+    <!-- Étoile décorative -->
+    <div style="text-align:right;color:rgba(255,255,255,.15);font-size:40px;line-height:1;margin-top:-20px;">✦</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast">✓ Numéro copié !</div>
+
+<!-- Bootstrap 5 JS -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ─── PAGE NAVIGATION — défini globalement immédiatement ───
+  // ─── VERSET DU JOUR ───
+  var versets = [
+    { text: '« Car Dieu a tant aimé le monde qu\'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu\'il ait la vie éternelle. »', ref: '— Jean 3:16' },
+    { text: '« Je suis le chemin, la vérité et la vie. Nul ne vient au Père que par moi. »', ref: '— Jean 14:6' },
+    { text: '« La foi, c\'est la certitude des choses qu\'on espère, la démonstration de celles qu\'on ne voit pas. »', ref: '— Hébreux 11:1' },
+    { text: '« Je puis tout par celui qui me fortifie. »', ref: '— Philippiens 4:13' },
+    { text: '« L\'Éternel est mon berger : je ne manquerai de rien. »', ref: '— Psaume 23:1' },
+    { text: '« Confie-toi en l\'Éternel de tout ton cœur, et ne t\'appuie pas sur ta sagesse. »', ref: '— Proverbes 3:5' },
+    { text: '« La foi vient de ce qu\'on entend, et ce qu\'on entend vient de la parole de Christ. »', ref: '— Romains 10:17' },
+  ];
+  var versetIndex = 0;
+  window.nextVerset = function() {
+    versetIndex = (versetIndex + 1) % versets.length;
+    var el = document.getElementById('versetText');
+    var ref = document.getElementById('versetRef');
+    if (el && ref) {
+      el.style.opacity = '0';
+      ref.style.opacity = '0';
+      setTimeout(function() {
+        el.textContent = versets[versetIndex].text;
+        ref.textContent = versets[versetIndex].ref;
+        el.style.transition = 'opacity .4s';
+        ref.style.transition = 'opacity .4s';
+        el.style.opacity = '1';
+        ref.style.opacity = '1';
+      }, 300);
+    }
+  };
+
+  window.showPage = function(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    var target = document.getElementById('page-' + id);
+    if (!target) return;
+    target.classList.add('active');
+
+    // Mise à jour de l'état actif dans la navbar
+    document.querySelectorAll('.nav-link-custom').forEach(function(l) {
+      l.classList.remove('active-nav');
+      var dp = l.getAttribute('data-page');
+      if (dp === id) l.classList.add('active-nav');
+    });
+    document.querySelectorAll('.nav-link-wci').forEach(function(l) {
+      l.classList.remove('active-wci');
+      var dp = l.getAttribute('data-page');
+      if (dp === id) l.classList.add('active-wci');
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Fermer le menu mobile
+    var navMenu = document.getElementById('navMenu') || document.getElementById('navMenuWci');
+    if (navMenu && navMenu.classList.contains('show')) {
+      var bsCollapse = bootstrap.Collapse.getInstance(navMenu);
+      if (bsCollapse) bsCollapse.hide();
+    }
+
+    // Relancer les animations
+    setTimeout(triggerFadeUps, 120);
+  };
+
+  // ─── COPY TO CLIPBOARD — défini globalement ───
+  window.copyNum = function(text, btn) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = '✓ Copié';
+      btn.classList.add('copied');
+      var t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(function() {
+        t.classList.remove('show');
+        btn.innerHTML = '📋 Copier';
+        btn.classList.remove('copied');
+      }, 2500);
+    }).catch(function() {
+      alert('Veuillez copier manuellement : ' + text);
+    });
+  };
+
+  // ─── SCROLL FADE-UPS ───
+  function triggerFadeUps() {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.page.active .fade-up').forEach(function(el) {
+      el.classList.remove('visible');
+      obs.observe(el);
+    });
+  }
+
+  // ─── INIT au chargement ───
+  document.addEventListener('DOMContentLoaded', function() {
+    // Délégation de clics sur data-page (remplace onclick inline)
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('[data-page]');
+      if (el) {
+        e.preventDefault();
+        window.showPage(el.getAttribute('data-page'));
+      }
+    });
+
+    // Lancer les animations de la page active initiale
+    setTimeout(triggerFadeUps, 150);
+
+    // ─── GALLERY FILTER ───
+    document.addEventListener('click', function(e) {
+      var parent = e.target.closest('#page-galerie');
+      if (!parent) return;
+      if (e.target.tagName === 'BUTTON' && e.target.closest('.gallery-filters')) {
+        parent.querySelectorAll('.gallery-filters button').forEach(function(b) {
+          b.className = 'btn btn-outline-red btn-sm px-4';
+        });
+        e.target.className = 'btn btn-red btn-sm px-4';
+      }
+    });
+
+    // ─── CONTACT FORM ───
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('#page-contact') && e.target.tagName === 'BUTTON' && e.target.textContent.includes('Envoyer')) {
+        e.target.innerHTML = '✓ Message envoyé !';
+        e.target.style.background = '#2ecc71';
+        setTimeout(function() {
+          e.target.innerHTML = '<i class="bi bi-send-fill me-2"></i>Envoyer le message';
+          e.target.style.background = '';
+        }, 3000);
+      }
+    });
+
+  }); // DOMContentLoaded
+</script>
+</body>
+</html>

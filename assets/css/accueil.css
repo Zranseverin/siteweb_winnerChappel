@@ -1,0 +1,428 @@
+/* ════════════════════════════════════════
+     PAGE D'ACCUEIL - HERO SECTION
+════════════════════════════════════════ */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 62vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(20, 5, 5, 0.25) 0%,
+      rgba(20, 5, 5, 0.55) 100%
+    ),
+    url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1800&q=80')
+      center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 30px 24px 30px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  margin-bottom: 20px;
+  animation: fadeUp 1.1s ease both;
+}
+
+.hero-btn {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fadeUp 1.3s ease both;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ════════════════════════════════════════
+     WELCOME SECTION
+════════════════════════════════════════ */
+
+.welcome-section {
+  background: #fff;
+  padding: 36px 0;
+}
+
+.welcome-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-image-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+.welcome-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(160deg, #c8a888, #8a6848);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+.welcome-image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--wci-red);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.welcome-text {
+  font-size: 14.5px;
+  color: #555;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.welcome-link {
+  color: var(--wci-red);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.welcome-link:hover {
+  border-bottom-color: var(--wci-red);
+}
+
+.welcome-link i {
+  font-size: 12px;
+}
+
+/* ════════════════════════════════════════
+     HORAIRES SECTION
+════════════════════════════════════════ */
+
+.horaires-section {
+  background: #f5f5f5;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.horaires-container {
+  justify-content: center;
+}
+
+.horaire-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.horaire-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--wci-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.horaire-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 2px;
+}
+
+.horaire-description {
+  font-size: 11px;
+  color: #555;
+  margin: 0;
+}
+
+.horaire-divider {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* Fade Up Animation Class */
+.fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.fade-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.fade-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.fade-up:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .horaire-item {
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .horaire-divider {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .welcome-image {
+    font-size: 60px;
+  }
+}
+
+/* ════════════════════════════════════════
+     ÉVÉNEMENTS & ACTUALITÉS SECTION
+════════════════════════════════════════ */
+
+.evenements-section {
+  background: #fff;
+  padding: 40px 0 48px;
+}
+
+/* Titre centré + séparateur */
+.evenements-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.evenements-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--wci-red);
+  margin-bottom: 14px;
+}
+
+.evenements-header .divider-red {
+  width: 56px;
+  height: 3px;
+  background: var(--wci-red);
+  border-radius: 2px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+/* ─── Card événement ─── */
+.event-card {
+  position: relative;
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 18px 18px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.85) 100%);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.event-card:hover {
+  transform: none;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Badge statut ─── */
+.event-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.badge-en-cours  { background: var(--wci-red);   color: #fff; }
+.badge-a-venir   { background: #2e9e5b;           color: #fff; }
+.badge-precedent { background: #888;              color: #fff; }
+
+/* ─── Corps de la card (image + texte côte à côte) ─── */
+.event-body {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Image réelle */
+.event-image-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f0e8e0;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Icône (carte sans photo) */
+.event-image-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f0ea;
+}
+
+.event-icon {
+  font-size: 2.2rem;
+  color: var(--wci-red);
+  opacity: 0.75;
+}
+
+/* Texte infos */
+.event-info { flex: 1; }
+
+.event-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: var(--wci-text);
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+
+.event-date {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--wci-red);
+  margin: 0 0 5px;
+}
+
+.event-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── Bouton "En savoir plus" ─── */
+.btn-event-outline {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 1.5px solid var(--wci-red);
+  color: var(--wci-red);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 9px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  margin-top: auto;
+}
+
+.btn-event-outline:hover {
+  background: var(--wci-red);
+  color: #fff;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 576px) {
+  .event-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-image-wrapper {
+    width: 100%;
+    height: 140px;
+  }
+
+  .event-badge { align-self: center; }
+}

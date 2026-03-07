@@ -1,0 +1,67 @@
+/* ─── MINISTÈRES ─── */
+.min-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 16px rgba(0,0,0,.08);
+  transition: transform .22s, box-shadow .22s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.min-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.13);
+}
+.min-card-photo {
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #c8a880, #a07848);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 64px;
+  flex-shrink: 0;
+}
+.min-card-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.min-card-body {
+  padding: 22px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.min-card-body h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--wci-red);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.min-card-body p {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.75;
+  flex: 1;
+}
+.min-card-body .btn-min {
+  display: inline-block;
+  margin-top: 16px;
+  background: var(--wci-red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: 9px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  width: fit-content;
+}
+.min-card-body .btn-min:hover {
+  background: var(--wci-light);
+  transform: translateY(-1px);
+}

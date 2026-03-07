@@ -1,0 +1,47 @@
+:root {
+  --wci-red:    #9A1B1E;
+  --wci-dark:   #7a1518;
+  --wci-light:  #c02428;
+  --wci-gold:   #c9a84c;
+  --wci-gray:   #F5F5F5;
+  --wci-text:   #1a1a1a;
+}
+
+/* ─── Base ─── */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--wci-text);
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
+.text-red   { color: var(--wci-red) !important; }
+.bg-red     { background-color: var(--wci-red) !important; }
+.bg-gray    { background-color: var(--wci-gray) !important; }
+.btn-red    { background: var(--wci-red); color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: background .2s, transform .15s; }
+.btn-red:hover { background: var(--wci-light); color: #fff; transform: translateY(-2px); }
+.btn-outline-red { border: 2px solid var(--wci-red); color: var(--wci-red); font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; transition: all .2s; }
+.btn-outline-red:hover { background: var(--wci-red); color: #fff; }
+.divider-red { width: 56px; height: 3px; background: var(--wci-red); border-radius: 2px; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
+.fade-up { opacity:0; transform:translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ─── PAGE HEADER / BREADCRUMB ─── */
+.page-header {
+  background: linear-gradient(135deg, var(--wci-red) 0%, var(--wci-dark) 100%);
+  padding: 100px 0 60px;
+  text-align: center;
+}
+.page-header h1 { font-size:clamp(1.8rem,4vw,3rem); font-weight:900; color:#fff; text-transform:uppercase; letter-spacing:.05em; }
+.page-header p { color:rgba(255,255,255,.75); font-size:1.05rem; margin-top:10px; }
+
+/* ─── TOAST ─── */
+#toast { position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a1a1a;color:#fff;padding:12px 28px;border-radius:30px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .35s;z-index:9999; }
+#toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px) {
+  .hero { min-height:80vh; }
+  .welcome-photo-wrap::before { display:none; }
+  .bank-card { flex-direction:column; }
+}

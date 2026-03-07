@@ -1,0 +1,15 @@
+/* ─── GALERIE ─── */
+.gallery-item {
+  border-radius: 12px; overflow: hidden;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg,#e8ddd4,#d0c8be);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px; cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.gallery-item:hover { transform: scale(1.04); box-shadow: 0 10px 28px rgba(0,0,0,.15); }
+
+.gallery-filters button {
+  transition: all .2s;
+}
