@@ -67,19 +67,19 @@ include 'includes/head.php';
   <div class="container">
     <div class="row g-4 text-center text-white">
       <div class="col-6 col-md-3 fade-up">
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">10+</h2>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#FFD700;">10+</h2>
         <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Années de ministère</p>
       </div>
       <div class="col-6 col-md-3 fade-up">
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">500+</h2>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#FFD700;">500+</h2>
         <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Membres actifs</p>
       </div>
       <div class="col-6 col-md-3 fade-up">
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">8</h2>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#FFD700;">8</h2>
         <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Ministères actifs</p>
       </div>
       <div class="col-6 col-md-3 fade-up">
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;">3</h2>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.8rem;color:#FFD700;">3</h2>
         <p style="color:rgba(255,255,255,.8);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Cultes hebdomadaires</p>
       </div>
     </div>

@@ -31,7 +31,7 @@ include 'includes/head.php';
       <!-- Photo pasteur -->
       <div class="col-lg-4 col-md-5 fade-up">
         <div class="welcome-image-wrapper">
-          <img src="assets/images/photo1.jpg" alt="Pasteur" class="welcome-image-photo"/>
+          <img src="assets/images/pasteur.jpg" alt="Pasteur" class="welcome-image-photo"/>
         </div>
       </div>
 
@@ -68,8 +68,14 @@ include 'includes/head.php';
             <p class="horaire-description"> Première Culte de Célébration</p>
             <p class="horaire-description">07h00 - 09h30</p>
           </div>
+           <div>
+           
+            <p class="horaire-description">Deuxième Culte de Célébration</p>
+            <p class="horaire-description">09h30 - 11h30</p>
+          </div>
         </div>
       </div>
+     
       <div class="col-md-3 fade-up">
         <div class="horaire-item">
           <div class="horaire-icon-wrapper">
