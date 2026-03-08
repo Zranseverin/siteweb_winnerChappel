@@ -14,8 +14,8 @@ include 'includes/head.php';
      PAGE 7 — GALERIE
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Galerie Photo</h1>
+  <p>Immortalisez les moments forts de notre église</p>
 </div>
 <section style="padding:80px 0;">
   <div class="container">

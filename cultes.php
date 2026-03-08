@@ -13,8 +13,8 @@ include 'includes/head.php';
      PAGE 4 — CULTES
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Nos Cultes & Programmes</h1>
+  <p>Rejoignez-nous pour nos rencontres spirituelles hebdomadaires</p>
 </div>
 <section style="padding:72px 0 80px; background:#fff;">
   <div class="container" style="max-width:820px;">

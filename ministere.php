@@ -13,8 +13,8 @@ include 'includes/head.php';
      PAGE 5 — MINISTÈRES
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Nos Ministères</h1>
+  <p>Découvrez tous les départements de l'église et trouvez votre place</p>
 </div>
 <section style="padding:68px 0 80px; background:#fff;">
   <div class="container">

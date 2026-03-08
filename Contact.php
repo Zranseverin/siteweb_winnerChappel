@@ -14,8 +14,8 @@ include 'includes/head.php';
      PAGE 9 — CONTACT
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Contactez-nous</h1>
+  <p>Nous sommes là pour vous servir et répondre à vos questions</p>
 </div>
 <section style="padding:80px 0;">
   <div class="container">

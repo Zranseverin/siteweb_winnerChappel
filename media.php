@@ -14,8 +14,8 @@ include 'includes/head.php';
      PAGE 6 — MÉDIAS
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Médias & Enseignements</h1>
+  <p>Écoutez et regardez nos messages bibliques</p>
 </div>
 <section style="padding:68px 0 80px; background:#fff;">
   <div class="container">

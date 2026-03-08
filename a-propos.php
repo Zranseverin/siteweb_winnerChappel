@@ -15,10 +15,10 @@ include 'includes/head.php';
 <!-- ── HERO : photo foule plein écran ── -->
 <section class="hero-section" style="background-image: url('assets/images/winner.png'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 40vh;">
   <div class="hero-content">
-    <h1 class="hero-title">Bienvenue à la Chapelle des<br>Vainqueurs Akouedo Goshen</h1>
-    <p class="hero-subtitle">Votre lieu de destiner, d'impact et de victoire en Christ.</p>
+    <h1 class="hero-title">À Propos de Winners' Chapel<br>Akouedo Goshen</h1>
+    <p class="hero-subtitle">Découvrez notre vision, notre histoire et ce qui nous anime.</p>
     <button class="btn btn-red btn-lg px-5 py-3 hero-btn" onclick="window.location.href='cultes.php'">
-      Nos Horaires de Culte
+      Rejoignez-nous ce Dimanche
     </button>
   </div>
 </section>

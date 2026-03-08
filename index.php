@@ -78,7 +78,7 @@ include 'includes/head.php';
           <div>
             <p class="horaire-title">Dimanche</p>
             <p class="horaire-description"> Deuxième Culte de Célébration</p>
-            <p class="horaire-description">09h45 - 12h00</p>
+            <p class="horaire-description">09h30 - 11h30</p>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ include 'includes/head.php';
 
     <!-- Titre -->
     <div class="evenements-header fade-up">
-      <h2 class="evenements-title">Événements &amp; Actualités</h2>
+      <h2 class="evenements-title">Événements</h2>
     </div>
 
     <!-- Cards -->

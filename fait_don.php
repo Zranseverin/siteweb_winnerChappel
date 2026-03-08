@@ -14,8 +14,8 @@ include 'includes/head.php';
      PAGE 8 — FAIRE UN DON
 ════════════════════════════════════════ -->
 <div class="page-header" style="background-image: url('assets/images/photo3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 300px;">
-  <h1>Notre Leadership</h1>
-  <p>Les bergers que Dieu a placés sur cette maison</p>
+  <h1>Faire un Don</h1>
+  <p>Soutenez l'œuvre de Dieu et participez à l'expansion de Son Royaume</p>
 </div>
 <div class="don-page-wrap">
   <div class="container" style="max-width:900px;">
