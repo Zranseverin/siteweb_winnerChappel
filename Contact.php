@@ -66,7 +66,24 @@ include 'includes/head.php';
         </div>
 
         <!-- Carte -->
-        <div class="map-placeholder mt-4">🗺️</div>
+        <div class="mt-4">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.0668!2d-3.9508!3d5.3515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ebfd5e1b8f67%3A0x6a62d1e9e6f4c8e0!2sAkou%C3%A9do%2C%20Abidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sci!4v1234567890" 
+            width="100%" 
+            height="450" 
+            style="border:0; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.1);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="text-center mt-3">
+            <a href="https://www.google.com/maps/dir/5.3712465,-3.8757129/5.3515,-3.9508/@5.3507867,-4.0311373,27747m/data=!3m2!1e3!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" 
+               class="btn btn-outline-red btn-sm">
+              <i class="bi bi-box-arrow-up-right me-2"></i>Ouvrir dans Google Maps
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Formulaire -->
